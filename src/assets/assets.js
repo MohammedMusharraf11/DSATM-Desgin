@@ -19,7 +19,7 @@ import Pic5 from './pic5.png';
 import Pic6 from './pic6.png';
 import Teacher from './Teacher.png';
 
-// import Money from './money.png';
+import Money from './money.png';
 import Hero from './hero.png';
 
 export const assets = {
@@ -45,7 +45,7 @@ export const assets = {
   Pic6,
   Teacher,
 
-  // Money
+  Money
 
 
 };

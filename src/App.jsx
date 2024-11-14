@@ -66,16 +66,19 @@
 import React from 'react'
 import { Route,Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import { ToastContainer } from 'react-toastify';
+
 import NavbarNew from './components/Navbar copy';
 import Footer  from './components/Footer';
 import RoleSelection from './pages/RoleSelection';
 import Login from './pages/Login';
 import StudentReg from './pages/StudentReg';
 import AlumniReg from './pages/AlumniReg';
+import { ToastContainer } from 'react-toastify';
+import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <div className='font-outfit mx-3 sm:mx-[10%]'>
+        <ToastContainer />
       <NavbarNew />
       <ToastContainer />
       <Routes>
@@ -84,6 +87,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/student-register' element={<StudentReg />} />
         <Route path='/alumni-register' element={<AlumniReg />} />
+        <Route path='/dashboard' element={<Dashboard />} />
         
       </Routes>
       <Footer />

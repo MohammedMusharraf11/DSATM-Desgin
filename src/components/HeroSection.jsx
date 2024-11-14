@@ -5,10 +5,24 @@ import 'aos/dist/aos.css';
 
 const HeroSection = () => {
   useEffect(() => {
+    // Initialize AOS with `once: false` to trigger on every scroll
     AOS.init({
       duration: 1000, // Adjust the duration as needed
       once: false,    // Trigger animation on every scroll
     });
+
+    // Reinitialize AOS on scroll or window resize
+    const handleScroll = () => {
+      AOS.refresh(); // Refresh animations on scroll
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (

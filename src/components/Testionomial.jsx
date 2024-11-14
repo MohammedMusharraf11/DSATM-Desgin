@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from 'swiper/modules';
-import { useState, useEffect } from 'react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 const testimonials = [
   {
     id: 1,
@@ -15,7 +14,7 @@ const testimonials = [
     position: "Software Engineer",
     feedback:
       "This platform has transformed the way I connect with my alumni and peers. Highly recommended!",
-    avatar: "https://via.placeholder.com/150",
+    avatar: "src/assets/person.jpg",
   },
   {
     id: 2,
@@ -23,7 +22,7 @@ const testimonials = [
     position: "UX Designer",
     feedback:
       "An amazing experience! The network of professionals here is unparalleled.",
-    avatar: "https://via.placeholder.com/150",
+    avatar: "src/assets/person1.jpg",
   },
   {
     id: 3,
@@ -31,31 +30,50 @@ const testimonials = [
     position: "Product Manager",
     feedback:
       "Great platform to collaborate and gain insights from industry experts.",
-    avatar: "https://via.placeholder.com/150",
+    avatar: "src/assets/person2.jpg",
   },
+  {
+    id: 4,
+    name: "Alice Brown",
+    position: "Marketing Specialist",
+    feedback:
+      "This platform has been a game changer for networking within the industry. Very pleased!",
+    avatar: "src/assets/person4.jpg",
+  },
+  {
+    id: 5,
+    name: "Michael Lee",
+    position: "Data Scientist",
+    feedback:
+      "Incredible resource for professional development and finding mentors. Highly recommended!",
+    avatar: "src/assets/person3.jpg",
+  }
 ];
 
 const Testimonial = () => {
-    useEffect(() => {
-        AOS.init({
-          duration: 1000, // Adjust the duration as needed
-          once: true,     // Only animate once on page load
-        });
-      }, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <section className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-aos="fade-right">
         <div className="mb-14 flex flex-col justify-center items-center sm:flex-row sm:items-center sm:justify-between max-sm:gap-8">
           <h2 className="text-4xl text-center font-bold text-gray-900 lg:text-left">
             Testimonials
           </h2>
           <div className="flex items-center gap-8">
+            {/* Smaller, positioned arrow buttons */}
             <button
-              className="swiper-button-prev group flex justify-center items-center border border-solid border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600"
+              className="swiper-button-prev group absolute left-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center text-indigo-600 transition-all duration-500 z-10"
               data-carousel-prev
+              style={{ fontSize: '18px' }} // Reduced size for arrows
             >
               <svg
-                className="h-6 w-6 text-indigo-600 group-hover:text-white"
+                className="h-5 w-5 group-hover:text-indigo-600"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,11 +88,12 @@ const Testimonial = () => {
               </svg>
             </button>
             <button
-              className="swiper-button-next group flex justify-center items-center border border-solid border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600"
+              className="swiper-button-next group absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center text-indigo-600 transition-all duration-500 z-10"
               data-carousel-next
+              style={{ fontSize: '18px' }} // Reduced size for arrows
             >
               <svg
-                className="h-6 w-6 text-indigo-600 group-hover:text-white"
+                className="h-5 w-5 group-hover:text-indigo-600"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +110,7 @@ const Testimonial = () => {
           </div>
         </div>
         <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={50}
           slidesPerView={1}
           navigation={{
@@ -98,30 +118,37 @@ const Testimonial = () => {
             prevEl: ".swiper-button-prev",
           }}
           loop={true}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
           className="lg:flex grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 swiper mySwiper"
         >
           {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="group bg-white border border-solid h-auto border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
-                <div className="flex items-center mb-9 gap-2 text-amber-500 transition-all duration-500 group-hover:text-indigo-600">
-                  <svg
-                    className="w-5 h-5"
-                    viewBox="0 0 18 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846L5.54081 5.53051C5.86652 5.48319 6.14808 5.27862 6.29374 4.98347L8.10326 1.31699Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  {/* Add other icons or testimonials here */}
+            <SwiperSlide key={testimonial.id} className="mt-4">
+              <div className="group bg-gray-200 border border-solid h-auto border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
+                <div className="flex items-center mb-4 gap-1 text-amber-500 transition-all duration-500 group-hover:text-indigo-600">
+                  {/* Render five stars */}
+                  {[...Array(5)].map((_, index) => (
+                    <svg
+                      key={index}
+                      className="w-5 h-5"
+                      viewBox="0 0 18 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846C1.86652 5.48319 2.14808 5.27862 2.29374 4.98347L4.10326 1.31699Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  ))}
                 </div>
-                <div>
+                <div className="text-center">
                   <img
                     src={testimonial.avatar}
-                    alt={`${testimonial.name} avatar`}
-                    className="rounded-full w-16 h-16 mb-4"
+                    alt={`${testimonial.name} avatar`} // Fixed the template literal
+                    className="rounded-full w-20 h-20 mb-4 border-4 border-indigo-500 mx-auto"
                   />
                   <h3 className="text-lg font-semibold text-gray-900">
                     {testimonial.name}

@@ -55,7 +55,7 @@ const courses = [
     students: "156 Students",
     oldPrice: "$29.0",
     newPrice: "Free",
-    category: "Photography",
+    // category: "Photography",
   },
   {
     id: 6,
@@ -74,31 +74,30 @@ const FeaturedCourses = () => {
   return (
     <section className="py-12 px-6">
       <div className="max-w-7xl mx-auto">
+        {/* Flexbox for heading and button */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-primary">Featured Courses</h2>
-          <button className="text-sm font-medium text-secondary border border-secondary px-4 py-2 rounded-lg">
+          <h2 className="text-5xl font-bold text-primary">Featured Courses</h2>
+          <button className="text-sm font-medium text-secondary border border-secondary px-4 py-2 rounded-lg ml-auto">
             All Courses
           </button>
         </div>
         <p className="text-gray-500 text-lg mb-6">Explore our Popular Courses</p>
 
+        {/* Grid of courses */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
             <div 
               key={course.id} 
               data-aos="fade-up" 
               data-aos-duration="800"
-              className="bg-white rounded-lg shadow-md p-4 transition-transform duration-300 hover:scale-505"
+              className="bg-white rounded-lg shadow-md p-4 transition-transform duration-300 hover:scale-105"
             >
               <div className="relative overflow-hidden rounded-t-lg">
                 <img 
                   src={course.image} 
                   alt={course.title} 
-                  className="w-full h-48 object-cover" 
+                  className="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110"
                 />
-                <span className="absolute top-4 left-4 bg-black text-white text-xs font-semibold px-2 py-1 rounded">
-                  {course.category}
-                </span>
               </div>
               <div className="p-4">
                 <p className="text-gray-500 text-sm">by {course.instructor}</p>

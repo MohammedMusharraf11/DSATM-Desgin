@@ -1,4 +1,3 @@
-// src/components/LatestArticles.jsx
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -38,7 +37,7 @@ function LatestArticles() {
 
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-orange-500 text-center mb-4">Latest Articles</h2>
+      <h2 className="text-5xl font-bold text-orange-500 text-center mb-4">Latest Articles</h2>
       <p className="text-gray-600 text-center mb-8">Explore our Free Articles</p>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -51,7 +50,7 @@ function LatestArticles() {
             <img
               src={article.imgSrc}
               alt={article.title}
-              className="w-full h-40 object-cover"
+              className="w-full h-40 object-cover transition-transform duration-300 transform hover:scale-110"
             />
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800">{article.title}</h3>
@@ -61,10 +60,6 @@ function LatestArticles() {
           </div>
         ))}
       </div>
-
-      <button className="mt-6 px-6 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 mx-auto block">
-        All Articles
-      </button>
     </section>
   );
 }
