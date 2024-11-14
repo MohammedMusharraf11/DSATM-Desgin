@@ -11,7 +11,8 @@ import Alumni from './alumni.png';
 import Profile from './profile_pic.png';
 import Calender from './calender.png';
 import ShakeHand from './shakehand.png';
-import Money from './money.png';
+// import Money from './money.png';
+import Hero from './hero.png';
 
 export const assets = {
   Logo,
@@ -27,6 +28,8 @@ export const assets = {
   Profile,
   Calender,
   ShakeHand,
-  Money
+  Hero,
+  // Money
+
 
 };
