@@ -5,7 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'primary':'#FF8403',
+        'secondary':'#022F74',
+        'custom-blue': '#EAEFFF'
+      },
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+		require("tailwindcss-animate"),
+		// ...
+	],
 }
