@@ -10,45 +10,46 @@ import 'swiper/css/pagination';
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
-    position: "Software Engineer",
+    name: "Emily Carter",
+    position: "Student, Computer Science",
     feedback:
-      "This platform has transformed the way I connect with my alumni and peers. Highly recommended!",
-    avatar: "src/assets/person.jpg",
+      "This platform has helped me connect with my professors and classmates like never before. The learning resources are invaluable!",
+    avatar: "src/assets/person.jpg", // Update with a relevant image
   },
   {
     id: 2,
-    name: "Jane Smith",
-    position: "UX Designer",
+    name: "David Wilson",
+    position: "Alumnus, Business Administration",
     feedback:
-      "An amazing experience! The network of professionals here is unparalleled.",
-    avatar: "src/assets/person1.jpg",
+      "I’ve gained so much insight from the networking opportunities here. The connections with alumni and mentors are amazing for my career!",
+    avatar: "src/assets/person1.jpg", // Update with a relevant image
   },
   {
     id: 3,
-    name: "Tom Green",
-    position: "Product Manager",
+    name: "Sophia Williams",
+    position: "Instructor, Mathematics Department",
     feedback:
-      "Great platform to collaborate and gain insights from industry experts.",
-    avatar: "src/assets/person2.jpg",
+      "I use this platform to engage with students and provide them with resources to further their learning. A great tool for any educator!",
+    avatar: "src/assets/person2.jpg", // Update with a relevant image
   },
   {
     id: 4,
-    name: "Alice Brown",
-    position: "Marketing Specialist",
+    name: "Michael Johnson",
+    position: "Graduate, Psychology",
     feedback:
-      "This platform has been a game changer for networking within the industry. Very pleased!",
-    avatar: "src/assets/person4.jpg",
+      "A fantastic resource for staying connected with my peers and professors. It’s made collaborating on projects and sharing knowledge much easier.",
+    avatar: "src/assets/person4.jpg", // Update with a relevant image
   },
   {
     id: 5,
-    name: "Michael Lee",
-    position: "Data Scientist",
+    name: "Olivia Brown",
+    position: "Research Assistant, Biology Department",
     feedback:
-      "Incredible resource for professional development and finding mentors. Highly recommended!",
-    avatar: "src/assets/person3.jpg",
-  }
+      "This platform has been a game-changer for finding mentors and learning about new research in my field. The educational resources are top-notch!",
+    avatar: "src/assets/person3.jpg", // Update with a relevant image
+  },
 ];
+
 
 const Testimonial = () => {
   useEffect(() => {
@@ -62,7 +63,7 @@ const Testimonial = () => {
     <section className="py-24">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-aos="fade-right">
         <div className="mb-14 flex flex-col justify-center items-center sm:flex-row sm:items-center sm:justify-between max-sm:gap-8">
-          <h2 className="text-4xl text-center font-bold text-gray-900 lg:text-left">
+          <h2 className="text-4xl text-center font-bold text-primary display-center lg:text-left">
             Testimonials
           </h2>
           <div className="flex items-center gap-8">
@@ -127,33 +128,33 @@ const Testimonial = () => {
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id} className="mt-4">
               <div className="group bg-gray-200 border border-solid h-auto border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
-                <div className="flex items-center mb-4 gap-1 text-amber-500 transition-all duration-500 group-hover:text-indigo-600">
-                  {/* Render five stars */}
-                  {[...Array(5)].map((_, index) => (
-                    <svg
-                      key={index}
-                      className="w-5 h-5"
-                      viewBox="0 0 18 17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846C1.86652 5.48319 2.14808 5.27862 2.29374 4.98347L4.10326 1.31699Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  ))}
-                </div>
                 <div className="text-center">
                   <img
                     src={testimonial.avatar}
-                    alt={`${testimonial.name} avatar`} // Fixed the template literal
-                    className="rounded-full w-20 h-20 mb-4 border-4 border-indigo-500 mx-auto"
+                    alt={`${testimonial.name} avatar`}
+                    className="rounded-full w-20 h-20 mb-4 border-4  mx-auto"
                   />
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {testimonial.name}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-secondary">{testimonial.name}</h3>
                   <p className="text-sm text-gray-500">{testimonial.position}</p>
+
+                  {/* Star Rating below the name */}
+                  <div className="flex justify-center mb-4">
+                    {[...Array(5)].map((_, index) => (
+                      <svg
+                        key={index}
+                        className="w-5 h-5 text-yellow-500"
+                        viewBox="0 0 18 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846C1.86652 5.48319 2.14808 5.27862 2.29374 4.98347L4.10326 1.31699Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    ))}
+                  </div>
+
                   <p className="mt-4 text-gray-700">{testimonial.feedback}</p>
                 </div>
               </div>
@@ -166,3 +167,4 @@ const Testimonial = () => {
 };
 
 export default Testimonial;
+

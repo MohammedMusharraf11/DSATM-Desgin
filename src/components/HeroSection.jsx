@@ -39,7 +39,7 @@ const HeroSection = () => {
           Learn from Industry Experts and Enhance Your Skills.
         </p>
         <div className="flex flex-col mt-6 space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
-          <button className="px-6 py-3 font-semibold text-white bg-primary rounded-md hover:bg-primary" data-aos="">
+          <button className="px-6 py-3 font-semibold text-white bg-primary rounded-md hover:bg-orange-600" data-aos="">
             Explore Courses
           </button>
           <button className="px-6 py-3 font-semibold text-primary border border-primary rounded-md hover:bg-gray-100 hover:text-secondary hover:border hover:border-secondary">

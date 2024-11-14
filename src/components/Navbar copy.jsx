@@ -44,7 +44,7 @@ function NavbarNew() {
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to={'/features'}>
-          <li className='py-1 font-semibold hover:text-primary'>FEATURES</li>
+          <li className='py-1 font-semibold hover:text-primary'>COURSES</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to={'/contact'}>
@@ -79,7 +79,7 @@ function NavbarNew() {
               <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
             </NavLink>
             <NavLink to={'/features'}>
-              <li className='py-1 font-semibold'>FEATURES</li>
+              <li className='py-1 font-semibold'>COURSES  </li>
               <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
             </NavLink>
             <NavLink to={'/contact'}>

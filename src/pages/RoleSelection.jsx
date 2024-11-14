@@ -32,7 +32,7 @@ function RoleSelection() {
           <div className="card flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md" data-aos="fade-right">
             <img src={assets.Teacher} alt="Teacher" className="w-42 h-42 mb-4 object-contain" /> {/* Adjusted size */}
             <p className="text-primary mb-2 font-semibold text-xl">Register as Teacher</p>
-            <button onClick={() => navigate('/alumni-register')} className="bg-secondary text-white px-8 py-3 rounded-full font-light mb-4">Alumni</button>
+            <button onClick={() => navigate('/alumni-register')} className="bg-secondary text-white px-8 py-3 rounded-full font-light mb-4">Teacher</button>
             <p className="text-gray-700">Have an Account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link></p>
           </div>
 
