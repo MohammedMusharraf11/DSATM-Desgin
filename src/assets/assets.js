@@ -17,6 +17,7 @@ import Pic3 from './pic3.png';
 import Pic4 from './pic4.png';
 import Pic5 from './pic5.png';
 import Pic6 from './pic6.png';
+import Teacher from './Teacher.png';
 
 // import Money from './money.png';
 import Hero from './hero.png';
@@ -42,7 +43,8 @@ export const assets = {
   Pic4,
   Pic5,
   Pic6,
-  
+  Teacher,
+
   // Money
 
 

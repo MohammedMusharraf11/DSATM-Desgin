@@ -31,19 +31,19 @@ function NavbarNew() {
       
       <ul className={`xl:flex items-center gap-10 font-medium text-secondary xl:max-md:gap-6 max-xl:hidden ${hideButtons ? 'justify-center w-full' : ''}`}>
         <NavLink to={'/'}>
-          <li className='py-1 font-semibold'>HOME</li>
+          <li className='py-1 font-semibold hover:text-primary'>HOME</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to={'/about'}>
-          <li className='py-1 font-semibold'>ABOUT</li>
+          <li className='py-1 font-semibold hover:text-primary'>ABOUT</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to={'/features'}>
-          <li className='py-1 font-semibold'>FEATURES</li>
+          <li className='py-1 font-semibold hover:text-primary'>FEATURES</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to={'/contact'}>
-          <li className='py-1 font-semibold'>CONTACT</li>
+          <li className='py-1 font-semibold hover:text-primary'>CONTACT</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
       </ul>
