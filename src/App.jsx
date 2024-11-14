@@ -72,7 +72,7 @@ import Footer  from './components/Footer';
 import RoleSelection from './pages/RoleSelection';
 import Login from './pages/Login';
 import StudentReg from './pages/StudentReg';
-
+import AlumniReg from './pages/AlumniReg';
 function App() {
   return (
     <div className='font-outfit mx-3 sm:mx-[10%]'>
@@ -83,6 +83,7 @@ function App() {
         <Route path='/roleselection' element={<RoleSelection />} />
         <Route path='/login' element={<Login />} />
         <Route path='/student-register' element={<StudentReg />} />
+        <Route path='/alumni-register' element={<AlumniReg />} />
         
       </Routes>
       <Footer />
