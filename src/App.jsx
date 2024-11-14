@@ -69,6 +69,9 @@ import Home from './pages/Home'
 import { ToastContainer } from 'react-toastify';
 import NavbarNew from './components/Navbar copy';
 import Footer  from './components/Footer';
+import RoleSelection from './pages/RoleSelection';
+import Login from './pages/Login';
+import StudentReg from './pages/StudentReg';
 
 function App() {
   return (
@@ -77,6 +80,9 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/roleselection' element={<RoleSelection />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/student-register' element={<StudentReg />} />
         
       </Routes>
       <Footer />

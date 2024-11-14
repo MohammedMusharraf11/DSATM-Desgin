@@ -11,6 +11,13 @@ import Alumni from './alumni.png';
 import Profile from './profile_pic.png';
 import Calender from './calender.png';
 import ShakeHand from './shakehand.png';
+import Pic1 from './pic1.png';
+import Pic2 from './pic2.png';
+import Pic3 from './pic3.png';
+import Pic4 from './pic4.png';
+import Pic5 from './pic5.png';
+import Pic6 from './pic6.png';
+
 // import Money from './money.png';
 import Hero from './hero.png';
 
@@ -29,6 +36,13 @@ export const assets = {
   Calender,
   ShakeHand,
   Hero,
+  Pic1,
+  Pic2,
+  Pic3,
+  Pic4,
+  Pic5,
+  Pic6,
+  
   // Money
 
 
